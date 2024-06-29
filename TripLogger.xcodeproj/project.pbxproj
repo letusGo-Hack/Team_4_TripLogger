@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = CC370F8D2C2FC18B003EE01D /* PanModal */; };
+		CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */; };
 		CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */; };
 		CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */; };
 		CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AC2C2FA90B008443E7 /* ViewController.swift */; };
@@ -17,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		CCC2C3A52C2FA90B008443E7 /* TripLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */,
 				EE04C46E2C2FB90E00C55D78 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC370F912C2FC437003EE01D /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
 		CCC2C39C2C2FA90B008443E7 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +73,7 @@
 			children = (
 				EE04C4722C2FCA3800C55D78 /* Weather */,
 				EE04C4712C2FC39900C55D78 /* TripLogger.entitlements */,
+				CC370F912C2FC437003EE01D /* Article */,
 				CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */,
 				CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */,
 				CCC2C3AC2C2FA90B008443E7 /* ViewController.swift */,
@@ -97,6 +110,7 @@
 			name = TripLogger;
 			packageProductDependencies = (
 				EE04C46D2C2FB90E00C55D78 /* SnapKit */,
+				CC370F8D2C2FC18B003EE01D /* PanModal */,
 			);
 			productName = TripLogger;
 			productReference = CCC2C3A52C2FA90B008443E7 /* TripLogger.app */;
@@ -128,6 +142,7 @@
 			mainGroup = CCC2C39C2C2FA90B008443E7;
 			packageReferences = (
 				EE04C46C2C2FB90E00C55D78 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CC370F8C2C2FC18B003EE01D /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = CCC2C3A62C2FA90B008443E7 /* Products */;
 			projectDirPath = "";
@@ -158,6 +173,7 @@
 				CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */,
 				CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */,
 				EE04C4742C2FCA5D00C55D78 /* WeatherManager.swift in Sources */,
+				CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */,
 				CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,10 +316,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TripLogger/TripLogger.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H2N9KXXP3M;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H2N9KXXP3M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TripLogger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -317,6 +334,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.letusGoHackTeam.TripLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = TripLogger_dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -334,8 +353,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TripLogger/TripLogger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H2N9KXXP3M;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H2N9KXXP3M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TripLogger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -349,6 +371,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.letusGoHackTeam.TripLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = TripLogger_dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -383,6 +407,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CC370F8C2C2FC18B003EE01D /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		EE04C46C2C2FB90E00C55D78 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -394,6 +426,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CC370F8D2C2FC18B003EE01D /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC370F8C2C2FC18B003EE01D /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
 		EE04C46D2C2FB90E00C55D78 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EE04C46C2C2FB90E00C55D78 /* XCRemoteSwiftPackageReference "SnapKit" */;
