@@ -10,15 +10,12 @@
 		CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = CC370F8D2C2FC18B003EE01D /* PanModal */; };
 		CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */; };
 		CC8D744D2C2FC3FA00127C83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */; };
-<<<<<<< HEAD
-=======
 		CC8D744F2C2FE34500127C83 /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D744E2C2FE33D00127C83 /* ArticleRepository.swift */; };
 		CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F922C2FD584003EE01D /* ArticleView.swift */; };
 		CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */; };
 		CC370F992C2FE9DF003EE01D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F982C2FE9DD003EE01D /* Article.swift */; };
 		CC370F9B2C2FED01003EE01D /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F9A2C2FECFE003EE01D /* ArticleRepository.swift */; };
 		CC370F9D2C2FF28E003EE01D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F9C2C2FF28C003EE01D /* Location.swift */; };
->>>>>>> f143dc0ae93b6575c2211a6fc1074fe7d174146c
 		CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */; };
 		CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */; };
 		CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AC2C2FA90B008443E7 /* ViewController.swift */; };
@@ -31,15 +28,12 @@
 /* Begin PBXFileReference section */
 		CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		CC8D744E2C2FE33D00127C83 /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
 		CC370F922C2FD584003EE01D /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWeatherView.swift; sourceTree = "<group>"; };
 		CC370F982C2FE9DD003EE01D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		CC370F9A2C2FECFE003EE01D /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
 		CC370F9C2C2FF28C003EE01D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
->>>>>>> f143dc0ae93b6575c2211a6fc1074fe7d174146c
 		CCC2C3A52C2FA90B008443E7 /* TripLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,10 +201,7 @@
 				CC370F9D2C2FF28E003EE01D /* Location.swift in Sources */,
 				CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */,
 				CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */,
-<<<<<<< HEAD
-=======
 				CC370F9B2C2FED01003EE01D /* ArticleRepository.swift in Sources */,
->>>>>>> f143dc0ae93b6575c2211a6fc1074fe7d174146c
 				CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
