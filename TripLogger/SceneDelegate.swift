@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    lazy var articleViewController = ArticleViewController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -18,8 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-
-        window?.rootViewController = ViewController()
+        let dummylocations = [
+                   CLLocation(latitude: 37.5759, longitude: 126.9769),
+                   CLLocation(latitude: 37.5593, longitude: 126.9753)
+               ]
+        let viewController = MapViewController(locations: dummylocations)
+        window?.rootViewController = viewController
+        
         window?.makeKeyAndVisible()
     }
 
