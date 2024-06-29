@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = CC370F8D2C2FC18B003EE01D /* PanModal */; };
 		CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */; };
 		CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */; };
 		CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AC2C2FA90B008443E7 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */,
 				EE04C46E2C2FB90E00C55D78 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +86,7 @@
 			name = TripLogger;
 			packageProductDependencies = (
 				EE04C46D2C2FB90E00C55D78 /* SnapKit */,
+				CC370F8D2C2FC18B003EE01D /* PanModal */,
 			);
 			productName = TripLogger;
 			productReference = CCC2C3A52C2FA90B008443E7 /* TripLogger.app */;
@@ -115,6 +118,7 @@
 			mainGroup = CCC2C39C2C2FA90B008443E7;
 			packageReferences = (
 				EE04C46C2C2FB90E00C55D78 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CC370F8C2C2FC18B003EE01D /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = CCC2C3A62C2FA90B008443E7 /* Products */;
 			projectDirPath = "";
@@ -367,6 +371,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CC370F8C2C2FC18B003EE01D /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		EE04C46C2C2FB90E00C55D78 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -378,6 +390,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CC370F8D2C2FC18B003EE01D /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC370F8C2C2FC18B003EE01D /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
 		EE04C46D2C2FB90E00C55D78 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EE04C46C2C2FB90E00C55D78 /* XCRemoteSwiftPackageReference "SnapKit" */;
