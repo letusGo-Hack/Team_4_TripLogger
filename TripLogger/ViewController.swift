@@ -7,16 +7,12 @@
 
 import UIKit
 
+import WeatherKit
+import CoreLocation
+
 import SnapKit
 
 class ViewController: UIViewController {
-
-    // snapkit test
-    private let myView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-    }()
     
     private let presentArticleButton = {
         let button = UIButton()
@@ -27,11 +23,6 @@ class ViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .yellow
-        view.addSubview(myView)
-        myView.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.size.equalTo(300)
-        }
         
         presentArticleButton.addAction(
             .init { [weak self] _ in
@@ -49,7 +40,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        configureUI()
+        Task {
+            await configureUI()
+            let a = try await WeatherManager.shared.fetchWeatherInHour(location: .init(
+                latitude: 37.546866198603475,
+                longitude: 127.06629217839286
+            ))
+            
+        }
     }
 }
 
+struct WeatherInfo {
+    var weather: CurrentWeather
+    
+    var image: UIImage? {
+        return UIImage(named: weather.symbolName)
+    }
+    
+    
+    
+}
