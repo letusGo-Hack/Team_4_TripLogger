@@ -181,6 +181,8 @@
 				CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */,
 				CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */,
 				EE04C4742C2FCA5D00C55D78 /* WeatherManager.swift in Sources */,
+				CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */,
+				CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */,
 				CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */,
 				CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */,
 			);
