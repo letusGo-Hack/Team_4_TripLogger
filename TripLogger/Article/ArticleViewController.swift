@@ -10,11 +10,17 @@ import UIKit
 import PanModal
 import SnapKit
 
+protocol ArticleViewControllerDelegate: AnyObject {
+    func addPin(location: Location)
+}
+
 final class ArticleViewController: UIViewController {
     private var location: Location
     private var repository: ArticleRepository
     
     private let contentView = ArticleView()
+    
+    weak var delegate: ArticleViewControllerDelegate?
     
     init(location: Location, repository: ArticleRepository) {
         self.location = location
@@ -52,6 +58,15 @@ final class ArticleViewController: UIViewController {
         contentView.configure(
             viewModel: viewModel
         )
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        let article = contentView.article
+        article.longitude = location.longitude
+        article.latitude = location.latitude
+        repository.insertArticle(article)
+        delegate?.addPin(location: location)
     }
 }
 

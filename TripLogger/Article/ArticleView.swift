@@ -70,4 +70,8 @@ final class ArticleView: UIView {
             $0.bottom.equalToSuperview()
         }
     }
+    
+    var article: Article {
+        Article(latitude: 0, longitude: 0, image: imageView.image, content: textField.text)
+    }
 }

@@ -11,7 +11,7 @@ import SnapKit
 import CoreLocation
 
 protocol MapViewControllerDelegate: AnyObject {
-    func add(location: CLLocation, onComplete: (Result<Void, Error>) -> Void)
+    func add(location: CLLocation)
 }
 
 class MapViewController: UIViewController {
@@ -19,7 +19,6 @@ class MapViewController: UIViewController {
     
     private lazy var mapView = MKMapView()
     private lazy var locationManager = CLLocationManager()
-    private lazy var pin = MKPointAnnotation()
     private var currentLocation: CLLocation!
     private lazy var plusBtn = {
         let button = UIButton()
@@ -102,14 +101,7 @@ extension MapViewController {
             print("현재 위치정보 없음")
             return
         }
-        delegate?.add(location: location, onComplete: { result in
-            switch result {
-            case .success:
-                print("location: \(location)")
-            case .failure(let error):
-                print("에러: \(error)")
-            }
-        })
+        delegate?.add(location: location)
     }
     
     func addPin(locations: [CLLocation]) {
@@ -126,6 +118,11 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}
         currentLocation = location
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let location = view.annotation?.coordinate else { return }
+        delegate?.add(location: CLLocation(latitude: location.latitude, longitude: location.longitude))
     }
 }
 
