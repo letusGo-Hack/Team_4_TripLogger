@@ -1,5 +1,5 @@
 //
-//  MapView.swift
+//  MapViewController.swift
 //  TripLogger
 //
 //  Created by LeeWanJae on 6/29/24.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import CoreLocation
 
-class MapView: UIViewController {
+class MapViewController: UIViewController {
     private lazy var mapView = MKMapView()
     private lazy var locationManager = CLLocationManager()
     private lazy var pin = MKPointAnnotation()
@@ -25,7 +25,7 @@ class MapView: UIViewController {
     }
 }
 
-extension MapView {
+extension MapViewController {
     private func configureUI() {
         mapView.delegate = self
         locationManager.delegate = self
@@ -65,7 +65,7 @@ extension MapView {
     }
 }
 
-extension MapView: MKMapViewDelegate, CLLocationManagerDelegate {
+extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}
         currentLocation = location

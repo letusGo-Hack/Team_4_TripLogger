@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC8D744D2C2FC3FA00127C83 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D744C2C2FC3FA00127C83 /* MapView.swift */; };
 		CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = CC370F8D2C2FC18B003EE01D /* PanModal */; };
 		CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */; };
+		CC8D744D2C2FC3FA00127C83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */; };
 		CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */; };
 		CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */; };
 		CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AC2C2FA90B008443E7 /* ViewController.swift */; };
@@ -19,8 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC8D744C2C2FC3FA00127C83 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCC2C3A52C2FA90B008443E7 /* TripLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		CCC2C3A72C2FA90B008443E7 /* TripLogger */ = {
 			isa = PBXGroup;
 			children = (
-				CC8D744C2C2FC3FA00127C83 /* MapView.swift */,
+				CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */,
 				CC370F912C2FC437003EE01D /* Article */,
 				CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */,
 				CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */,
@@ -161,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */,
-				CC8D744D2C2FC3FA00127C83 /* MapView.swift in Sources */,
+				CC8D744D2C2FC3FA00127C83 /* MapViewController.swift in Sources */,
 				CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */,
 				CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */,
 				CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */,
