@@ -46,12 +46,13 @@ final class ArticleView: UIView {
             $0.edges.equalToSuperview()
         }
         scrollView.addSubview(contentView)
-        
+        contentView.backgroundColor = .systemGray4
         contentView.snp.makeConstraints {
             $0.width.equalToSuperview()
             $0.centerX.top.bottom.equalToSuperview()
         }
         
+        imageView.image = UIImage(named: "applepark")
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
@@ -62,6 +63,7 @@ final class ArticleView: UIView {
             $0.top.leading.equalToSuperview().inset(8.0)
         }
         contentView.addSubview(textField)
+        textField.placeholder = "오늘의 기분을 적어보세요."
         textField.contentVerticalAlignment = .top
         textField.snp.makeConstraints {
             $0.height.equalTo(500)
@@ -71,7 +73,7 @@ final class ArticleView: UIView {
         }
     }
     
-    var article: Article {
-        Article(latitude: 0, longitude: 0, image: imageView.image, content: textField.text)
+    var article: (image: UIImage?, content: String?) {
+        return (imageView.image, content: textField.text)
     }
 }

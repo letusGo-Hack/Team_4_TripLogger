@@ -17,6 +17,7 @@ protocol ArticleViewControllerDelegate: AnyObject {
 final class ArticleViewController: UIViewController {
     private var location: Location
     private var repository: ArticleRepository
+    private var article: Article!
     
     private let contentView = ArticleView()
     
@@ -43,13 +44,14 @@ final class ArticleViewController: UIViewController {
     }
     
     private func configure() {
-        guard let article = try? repository.articles()?
-            .first (where: { $0.longitude == location.longitude && $0.latitude == location.latitude }),
-        let imageData = article.imageData,
-        let image = UIImage(data: imageData) else {
+        self.article = try? repository.fetchArticles()?
+            .last (where: { $0.longitude == location.longitude && $0.latitude == location.latitude }) ??
+        Article(latitude: location.latitude, longitude: location.longitude, image: nil, content: nil)
+        guard let imageData = article?.imageData,
+              let image = UIImage(data: imageData) else {
                 return
             }
-        let viewModel = ArticleView.ViewModel(weather: nil, image: image, content: article.content)
+        let viewModel = ArticleView.ViewModel(weather: nil, image: image, content: article?.content)
         configure(viewModel: viewModel)
     }
     
@@ -62,10 +64,9 @@ final class ArticleViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        let article = contentView.article
-        article.longitude = location.longitude
-        article.latitude = location.latitude
-        repository.insertArticle(article)
+        let articleInfo = contentView.article
+        
+        try! repository.insertArticle(Article(latitude: location.latitude, longitude: location.longitude, image: articleInfo.image, content: articleInfo.content))
         delegate?.addPin(location: location)
     }
 }

@@ -9,34 +9,52 @@ import SwiftData
 
 @MainActor
 protocol ArticleRepository {
-    func insertArticle(_ article: Article)
+    func insertArticle(_ article: Article) throws
     
-    func articles() throws -> [Article]?
+    func fetchArticles() throws -> [Article]?
 }
 
 extension ArticleRepository {
     func locations() throws -> [Location]? {
-        try articles()?
+        try fetchArticles()?
             .map { article in
                 Location(latitude: article.latitude, longitude: article.longitude)
             }
     }
 }
 
-@MainActor
-final class ArticleRepositoryImpl: ArticleRepository {
-    private let container: ModelContainer
-
-    init() throws {
-        container = try ModelContainer(for: Article.self)
+final class ArticleArrayRepository: ArticleRepository {
+    private var articles: [Article] = []
+    
+    func insertArticle(_ article: Article) throws {
+        articles.append(article)
     }
     
-    func insertArticle(_ article: Article) {
-        container.mainContext.insert(article)
-    }
-    
-    func articles() throws -> [Article]? {
-        let descriptor = FetchDescriptor<Article>()
-        return try container.mainContext.fetch(descriptor)
+    func fetchArticles() throws -> [Article]? {
+        return self.articles
     }
 }
+
+
+//@MainActor
+//final class ArticleRepositoryImpl: ArticleRepository {
+//    private let container: ModelContainer
+//
+//    init() throws {
+//        container = try ModelContainer(for: Article.self)
+//    }
+//    
+//    func insertArticle(_ article: Article) throws {
+//        try articles()?.forEach {
+//            container.mainContext.delete($0)
+//        }
+//        container.mainContext.insert(article)
+//        try container.mainContext.save()
+//        try print(articles()?.first?.content)
+//    }
+//    
+//    func articles() throws -> [Article]? {
+//        let descriptor = FetchDescriptor<Article>()
+//        return try container.mainContext.fetch(descriptor)
+//    }
+//}

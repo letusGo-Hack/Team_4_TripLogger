@@ -11,7 +11,7 @@ import CoreLocation
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private let repository: ArticleRepository = try! ArticleRepositoryImpl()
+    private let repository: ArticleRepository = try! ArticleArrayRepository()
     var viewController: MapViewController!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

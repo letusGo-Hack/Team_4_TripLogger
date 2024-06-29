@@ -8,13 +8,13 @@
 import UIKit
 import SwiftData
 
-@Model
+//@Model
 final class Article {
     
     var latitude: Double
     var longitude: Double
     
-    @Attribute(.externalStorage) var imageData: Data?
+    var imageData: Data?
     var content: String?
     
     init(latitude: Double, longitude: Double, image: UIImage? = nil, content: String? = nil) {
