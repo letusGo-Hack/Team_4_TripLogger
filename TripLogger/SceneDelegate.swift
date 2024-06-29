@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,10 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-
-        let viewController = MapViewController()
-//        viewController.configure(locations: <#T##[CLLocation]#>)
-        
+        let dummylocations = [
+                   CLLocation(latitude: 37.5759, longitude: 126.9769),
+                   CLLocation(latitude: 37.5593, longitude: 126.9753)
+               ]
+        let viewController = MapViewController(locations: dummylocations)
         viewController.delegate = articleRepository
         window?.rootViewController = viewController
         

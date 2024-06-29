@@ -33,6 +33,15 @@ class MapViewController: UIViewController {
         return button
     }()
     
+    init(locations: [CLLocation]) {
+            super.init(nibName: nil, bundle: nil)
+            self.addPin(locations: locations)
+        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -103,10 +112,12 @@ extension MapViewController {
         })
     }
     
-    func configure(locations: [CLLocation]) {
+    func addPin(locations: [CLLocation]) {
         // pin
         for location in locations {
-            mapView.addAnnotation(location as! MKAnnotation)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location.coordinate
+            mapView.addAnnotation(annotation)
         }
     }
 }
