@@ -22,6 +22,12 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
     }
+    
+    func configure(viewModel: ArticleView.ViewModel) {
+        contentView.configure(
+            viewModel: viewModel
+        )
+    }
 }
 
 extension ArticleViewController: PanModalPresentable {
