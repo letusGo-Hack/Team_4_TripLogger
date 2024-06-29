@@ -13,6 +13,7 @@ import CoreLocation
 class MapView: UIViewController {
     private lazy var mapView = MKMapView()
     private lazy var locationManager = CLLocationManager()
+    private lazy var pin = MKPointAnnotation()
     private var currentLocation: CLLocation!
     
     override func viewDidLoad() {
@@ -65,4 +66,12 @@ extension MapView {
 }
 
 extension MapView: MKMapViewDelegate, CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        currentLocation = location
+    }
 }
+
+// 핀: 차후 글이 추가 완료 버튼에 추가
+// pin.coordinate = currentLocation.coordinate
+// mapView.addAnnotation(pin)

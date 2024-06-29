@@ -18,12 +18,31 @@ class ViewController: UIViewController {
         return view
     }()
     
+    private let presentArticleButton = {
+        let button = UIButton()
+        button.configuration = .plain()
+        button.setTitle("presentArticle", for: .normal)
+        return button
+    }()
+    
     private func configureUI() {
         view.backgroundColor = .yellow
         view.addSubview(myView)
         myView.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(300)
+        }
+        
+        presentArticleButton.addAction(
+            .init { [weak self] _ in
+                let viewController = ArticleViewController()
+                self?.presentPanModal(viewController)
+            }, 
+            for: .touchUpInside
+        )
+        view.addSubview(presentArticleButton)
+        presentArticleButton.snp.makeConstraints {
+            $0.bottom.trailing.equalToSuperview().inset(12)
         }
     }
     
