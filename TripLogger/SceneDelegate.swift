@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     lazy var articleViewController = ArticleViewController()
-    lazy var articleRepository = ArticleRepository(articleVC: articleViewController)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -25,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                    CLLocation(latitude: 37.5593, longitude: 126.9753)
                ]
         let viewController = MapViewController(locations: dummylocations)
-        viewController.delegate = articleRepository
         window?.rootViewController = viewController
         
         window?.makeKeyAndVisible()
