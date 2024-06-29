@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = CC370F8D2C2FC18B003EE01D /* PanModal */; };
 		CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */; };
+		CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F922C2FD584003EE01D /* ArticleView.swift */; };
+		CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */; };
 		CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */; };
 		CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */; };
 		CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AC2C2FA90B008443E7 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		CC370F922C2FD584003EE01D /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWeatherView.swift; sourceTree = "<group>"; };
 		CCC2C3A52C2FA90B008443E7 /* TripLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		CC370F912C2FC437003EE01D /* Article */ = {
 			isa = PBXGroup;
 			children = (
+				CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */,
+				CC370F922C2FD584003EE01D /* ArticleView.swift */,
 				CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */,
 			);
 			path = Article;
@@ -172,6 +178,8 @@
 			files = (
 				CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */,
 				CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */,
+				CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */,
+				CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */,
 				EE04C4742C2FCA5D00C55D78 /* WeatherManager.swift in Sources */,
 				CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */,
 				CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */,
