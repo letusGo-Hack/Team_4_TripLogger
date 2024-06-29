@@ -32,6 +32,21 @@ class MapViewController: UIViewController {
         return button
     }()
     
+    private let weatherView = UIView()
+    private let weatherImage = UIImageView()
+    private let weatherTimeLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 10)
+        label.textAlignment = .center
+        return label
+    }()
+    private lazy var weatherButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(weatherButtonTouchUpInside), for: .touchUpInside)
+        return button
+    }()
+    
+    
     init(locations: [CLLocation]) {
             super.init(nibName: nil, bundle: nil)
             self.addPin(locations: locations)
@@ -46,6 +61,14 @@ class MapViewController: UIViewController {
         configureUI()
         DispatchQueue.global().async {
             self.checkLocationServices()
+        }
+        
+        Task {
+            let info = try await WeatherManager.shared.fetchWeatherInHour(location: currentLocation)
+            weatherImage.image = UIImage(systemName: info?.condition.sfsymbol ?? "")
+            if let futureDate = info?.date, let diffTime = calculateTimeDifference(from: futureDate) {
+                weatherTimeLabel.text = "\(diffTime.hours):\(diffTime.minutes) 후"
+            }
         }
     }
 }
@@ -71,6 +94,34 @@ extension MapViewController {
             make.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(40)
         }
+        
+        view.addSubview(weatherView)
+        weatherView.backgroundColor = .white
+        weatherView.addSubview(weatherImage)
+        weatherView.addSubview(weatherTimeLabel)
+        weatherView.addSubview(weatherButton)
+        
+        weatherView.snp.makeConstraints {
+            $0.size.equalTo(62)
+            $0.leading.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(40)
+        }
+        weatherView.layer.cornerRadius = 30
+        
+        weatherImage.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(30)
+            $0.top.equalToSuperview().offset(10)
+        }
+        
+        weatherTimeLabel.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(10)
+        }
+        weatherButton.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
     }
     
     private func checkLocationServices() {
@@ -111,6 +162,23 @@ extension MapViewController {
             annotation.coordinate = location.coordinate
             mapView.addAnnotation(annotation)
         }
+    }
+    
+    private func calculateTimeDifference(from date: Date) -> (hours: Int, minutes: Int)? {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: currentDate, to: date)
+        
+        guard let hours = components.hour, let minutes = components.minute else {
+            return nil
+        }
+        
+        return (hours, minutes)
+    }
+    
+    @objc
+    private func weatherButtonTouchUpInside() {
+        UIApplication.shared.open(URL(string: "weather:weather://")!)
     }
 }
 
