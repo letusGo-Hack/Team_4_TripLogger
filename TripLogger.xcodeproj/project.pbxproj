@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		CC370F8E2C2FC18B003EE01D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = CC370F8D2C2FC18B003EE01D /* PanModal */; };
 		CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */; };
+		CC8D744D2C2FC3FA00127C83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */; };
+		CC8D744F2C2FE34500127C83 /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D744E2C2FE33D00127C83 /* ArticleRepository.swift */; };
+		CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F922C2FD584003EE01D /* ArticleView.swift */; };
+		CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */; };
+		CC370F992C2FE9DF003EE01D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F982C2FE9DD003EE01D /* Article.swift */; };
+		CC370F9B2C2FED01003EE01D /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F9A2C2FECFE003EE01D /* ArticleRepository.swift */; };
+		CC370F9D2C2FF28E003EE01D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC370F9C2C2FF28C003EE01D /* Location.swift */; };
 		CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */; };
 		CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */; };
 		CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2C3AC2C2FA90B008443E7 /* ViewController.swift */; };
@@ -20,6 +27,13 @@
 
 /* Begin PBXFileReference section */
 		CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CC8D744E2C2FE33D00127C83 /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
+		CC370F922C2FD584003EE01D /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWeatherView.swift; sourceTree = "<group>"; };
+		CC370F982C2FE9DD003EE01D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		CC370F9A2C2FECFE003EE01D /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
+		CC370F9C2C2FF28C003EE01D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CCC2C3A52C2FA90B008443E7 /* TripLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +61,10 @@
 		CC370F912C2FC437003EE01D /* Article */ = {
 			isa = PBXGroup;
 			children = (
+				CC370F9A2C2FECFE003EE01D /* ArticleRepository.swift */,
+				CC370F982C2FE9DD003EE01D /* Article.swift */,
+				CC370F942C2FD85F003EE01D /* ArticleWeatherView.swift */,
+				CC370F922C2FD584003EE01D /* ArticleView.swift */,
 				CC370F8F2C2FC295003EE01D /* ArticleViewController.swift */,
 			);
 			path = Article;
@@ -71,8 +89,10 @@
 		CCC2C3A72C2FA90B008443E7 /* TripLogger */ = {
 			isa = PBXGroup;
 			children = (
+				CC8D744C2C2FC3FA00127C83 /* MapViewController.swift */,
 				EE04C4722C2FCA3800C55D78 /* Weather */,
 				EE04C4712C2FC39900C55D78 /* TripLogger.entitlements */,
+				CC370F9C2C2FF28C003EE01D /* Location.swift */,
 				CC370F912C2FC437003EE01D /* Article */,
 				CCC2C3A82C2FA90B008443E7 /* AppDelegate.swift */,
 				CCC2C3AA2C2FA90B008443E7 /* SceneDelegate.swift */,
@@ -171,9 +191,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC2C3AD2C2FA90B008443E7 /* ViewController.swift in Sources */,
+				CC8D744D2C2FC3FA00127C83 /* MapViewController.swift in Sources */,
+				CC370F992C2FE9DF003EE01D /* Article.swift in Sources */,
 				CCC2C3A92C2FA90B008443E7 /* AppDelegate.swift in Sources */,
+				CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */,
+				CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */,
 				EE04C4742C2FCA5D00C55D78 /* WeatherManager.swift in Sources */,
+				CC370F952C2FD863003EE01D /* ArticleWeatherView.swift in Sources */,
+				CC370F9D2C2FF28E003EE01D /* Location.swift in Sources */,
+				CC370F932C2FD588003EE01D /* ArticleView.swift in Sources */,
 				CC370F902C2FC29C003EE01D /* ArticleViewController.swift in Sources */,
+				CC370F9B2C2FED01003EE01D /* ArticleRepository.swift in Sources */,
 				CCC2C3AB2C2FA90B008443E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +344,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+
 				CODE_SIGN_ENTITLEMENTS = TripLogger/TripLogger.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -352,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_ENTITLEMENTS = TripLogger/TripLogger.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;

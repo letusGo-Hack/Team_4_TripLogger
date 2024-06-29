@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    private let repository: ArticleRepository = try! ArticleRepositoryImpl()
+    lazy var articleViewController = ArticleViewController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,7 +21,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
 
+        let articleViewController = ArticleViewController(location: .init(latitude: 37.5, longitude: 128.0), repository: repository)
         window?.rootViewController = ViewController()
+        let dummylocations = [
+                   CLLocation(latitude: 37.5759, longitude: 126.9769),
+                   CLLocation(latitude: 37.5593, longitude: 126.9753)
+               ]
+        let viewController = MapViewController(locations: dummylocations)
+        window?.rootViewController = viewController
+        
         window?.makeKeyAndVisible()
     }
 
