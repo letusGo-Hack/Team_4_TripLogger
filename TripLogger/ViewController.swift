@@ -23,11 +23,6 @@ class ViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .yellow
-        view.addSubview(myView)
-        myView.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.size.equalTo(300)
-        }
         
         presentArticleButton.addAction(
             .init { [weak self] _ in
@@ -52,24 +47,6 @@ class ViewController: UIViewController {
                 longitude: 127.06629217839286
             ))
             
-        }
-    }
-    
-    func configureUI() async {
-        Task {
-            let currentWeatehr = try await WeatherManager.shared.fetchCurrentWeather(
-                location: .init(
-                    latitude: 37.546866198603475,
-                    longitude: 127.06629217839286
-                )
-            )
-            view.backgroundColor = .yellow
-            view.addSubview(weatherIcon)
-            weatherIcon.image = UIImage(systemName: currentWeatehr.symbolName)
-            weatherIcon.snp.makeConstraints {
-                $0.center.equalToSuperview()
-                $0.size.equalTo(300)
-            }
         }
     }
 }
