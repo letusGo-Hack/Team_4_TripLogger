@@ -18,6 +18,7 @@ final class WeatherManager {
     
     func fetchCurrentWeather(location: CLLocation) async throws -> CurrentWeather {
         let weather = try await WeatherService.shared.weather(for: location)
+        
         return weather.currentWeather
     }
     
