@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         
         presentArticleButton.addAction(
             .init { [weak self] _ in
-                let viewController = ArticleViewController()
-                self?.presentPanModal(viewController)
+//                let viewController = ArticleViewController()
+//                self?.presentPanModal(viewController)
             }, 
             for: .touchUpInside
         )
